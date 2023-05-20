@@ -32,17 +32,19 @@ from etils.epath.typing import PathLike
 
 _P = TypeVar('_P')
 
-URI_PREFIXES = ('gs://', 's3://')
-_URI_SCHEMES = frozenset(('gs', 's3'))
+URI_PREFIXES = ('gs://', 's3://', 'hdfs://')
+_URI_SCHEMES = frozenset(('gs', 's3', 'hdfs'))
 
 _URI_MAP_ROOT = {
     'gs://': '/gs/',
     's3://': '/s3/',
+    'hdfs://': '//hdfs',
 }
 
 _PREFIX_TO_BACKEND = {
     'gs': backend_lib.tf_backend,
     's3': backend_lib.tf_backend,
+    'hdfs': backend_lib.tf_backend,
     None: backend_lib.os_backend,
 }
 _GCS_BACKENDS = frozenset(
