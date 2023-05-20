@@ -38,7 +38,7 @@ _URI_SCHEMES = frozenset(('gs', 's3', 'hdfs'))
 _URI_MAP_ROOT = {
     'gs://': '/gs/',
     's3://': '/s3/',
-    'hdfs://': '//hdfs',
+    'hdfs://': '/hdfs/',
 }
 
 _PREFIX_TO_BACKEND = {
